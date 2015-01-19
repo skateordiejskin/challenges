@@ -1,0 +1,45 @@
+<html>
+	<head>
+		<link rel="stylesheet" href="../../public/css/main.css">
+	</head>
+	<body>
+	<h1>Sorting</h1>
+	<div class="row">
+	<form>
+		Numbers: <input type="text" id="sort"><br>
+		<input type="submit">
+	</form>
+
+	<div class="row">
+		<div class="large-2 columns">Merge Sort: </div>
+		<div class="large-10 columns merge"></div>
+	</div>
+	<div class="row">
+		<div class="large-2 columns">Bubble Sort: </div>
+		<div class="large-10 columns bubble"></div>
+	</div>
+	</div>
+
+	</body>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+	<script src="sort.js"></script>
+	<script>
+
+		$("form").submit(function(event) {
+			event.preventDefault();
+			var data = $("#sort").val().split(",");
+			arraySize = data.length,
+			tmpArr = [];
+
+			for(var i = 0; i < arraySize; i++){
+				data[i] = parseInt(data[i]);
+			}
+
+			$('.merge').empty();
+			$('.bubble').empty();
+
+			$('.merge').append(mergeSort(data, tmpArr, arraySize).join(", "));
+			$('.bubble').append(bubbleSort(data, arraySize).join(", "));
+		});
+	</script>
+</html>

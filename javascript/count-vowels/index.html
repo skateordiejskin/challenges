@@ -1,0 +1,28 @@
+<html>
+	<head>
+		<link rel="stylesheet" href="../../public/css/main.css">
+	</head>
+	<body>
+	<h1>Count Vowels</h1>
+	<div class="row">
+		<form>
+			Text: <input type="text" id="text"><br>
+			<input type="submit">
+		</form>
+		<div class="row">
+			<div class="large-10 columns vowels"></div>
+		</div>
+	</div>
+
+	</body>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+	<script src="count-vowels.js"></script>
+	<script>
+
+		$("form").submit(function(event) {
+			event.preventDefault();
+			$('.vowels').empty();
+			$('.vowels').append(countVowels($("#text").val()));
+		});
+	</script>
+</html>

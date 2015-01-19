@@ -1,0 +1,28 @@
+<html>
+	<head>
+		<link rel="stylesheet" href="../../public/css/main.css">
+	</head>
+	<body>
+	<h1>Count Words in a String</h1>
+	<div class="row">
+		<form>
+			Sentence: <input type="text" id="sentence"><br>
+			<input type="submit">
+		</form>
+		<div class="row">
+			<div class="large-2 columns">Number of Words:</div>
+			<div class="large-10 columns wordCount"></div>
+		</div>
+	</div>
+
+	</body>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+	<script src="wordCount.js"></script>
+	<script>
+		$("form").submit(function(event) {
+			event.preventDefault();
+			$('.wordCount').empty();
+			$('.wordCount').append(wordsInString($("#sentence").val()));
+		});
+	</script>
+</html>

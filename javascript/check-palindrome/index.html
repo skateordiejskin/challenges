@@ -1,0 +1,29 @@
+<html>
+	<head>
+		<link rel="stylesheet" href="../../public/css/main.css">
+	</head>
+	<body>
+	<h1>Check if Palindrome</h1>
+	<div class="row">
+	<form>
+		String: <input type="text" id="string"><br>
+		<input type="submit">
+	</form>
+
+	<div class="row">
+		<div class="large-2 columns">Is Palindrome: </div>
+		<div class="large-10 columns palindrome"></div>
+	</div>
+	</div>
+
+	</body>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+	<script src="palindrome.js"></script>
+	<script>
+		$("form").submit(function(event) {
+			event.preventDefault();
+			$('.palindrome').empty();
+			$('.palindrome').append(palindrome($("#string").val()));
+		});
+	</script>
+</html>

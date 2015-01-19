@@ -1,0 +1,29 @@
+<html>
+	<head>
+		<link rel="stylesheet" href="../../public/css/main.css">
+	</head>
+	<body>
+	<h1>Reverse a String</h1>
+	<div class="row">
+	<form>
+		String: <input type="text" id="string"><br>
+		<input type="submit">
+	</form>
+
+	<div class="row">
+		<div class="large-2 columns">Reversed String: </div>
+		<div class="large-10 columns reversedString"></div>
+	</div>
+	</div>
+
+	</body>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+	<script src="reverse.js"></script>
+	<script>
+		$("form").submit(function(event) {
+			event.preventDefault();
+			$('.reversedString').empty();
+			$('.reversedString').append(reverseString($("#string").val()));
+		});
+	</script>
+</html>

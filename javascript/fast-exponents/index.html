@@ -1,0 +1,37 @@
+<html>
+	<head>
+		<link rel="stylesheet" href="../../public/css/main.css">
+	</head>
+	<body>
+	<h1>Fast Exponents</h1>
+	<div class="row">
+		<form>
+			Base: <input type="text" id="base"><br>
+			Exponent: <input type="text" id="exponent">
+			<input type="submit">
+		</form>
+	</div>
+	<div class="row">
+		<div class="large-1 columns">Equation:</div>
+		<div class="large-1 columns end equation"></div>
+	</div>
+	<div class="row">
+		<div class="large-10 columns loop"></div>
+	</div>
+	<div class="row">
+		<div class="large-10 columns recursion"></div>
+	</div>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+	<script src="fast-exponents.js"></script>
+	<script>
+	$("form").submit(function(event) {
+		event.preventDefault();
+		$('.equation').append($("#base").val() + '^' + $("#exponent").val());
+		$('.loop').append("Loop: "+ fastExponentsLoop($("#base").val(), $("#exponent").val()));
+		$('.recursion').append("Recursion: "+ fastExponentsLoop($("#base").val(), $("#exponent").val()));
+	});
+		//console.log(fastExponentsRecursion(5,10));
+		
+	</script>
+	</body>
+</html>

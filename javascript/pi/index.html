@@ -23,8 +23,6 @@
 		$("form").submit(function(event) {
 			event.preventDefault();
 			$('.pi').empty();
-			//console.log($("#digits").val());
-			//calculatePi(20)
 			$('.pi').append(calculatePi($("#digits").val()));
 		});
 	</script>
